@@ -284,8 +284,16 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Add/Edit Course" id="Azm-Un-fhX">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="wws-mF-PBT"/>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="aYD-6R-rEa"/>
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="wws-mF-PBT">
+                                            <connections>
+                                                <action selector="cancel:" destination="vd6-Sg-Onz" id="PuD-ke-dX3"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="aYD-6R-rEa">
+                                            <connections>
+                                                <action selector="done:" destination="vd6-Sg-Onz" id="Lda-33-kss"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -293,6 +301,10 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add/Edit Component" id="KuS-HB-iI9"/>
+                    <connections>
+                        <outlet property="nameField" destination="waB-53-tZO" id="UXS-iC-NRs"/>
+                        <outlet property="typeControl" destination="9gT-Q9-tWG" id="LPk-VC-Pkw"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="1962" y="-522"/>
@@ -325,6 +337,12 @@
         </class>
         <class className="GCCourseDetailViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GCCourseDetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancel:"/>
+                <relationship kind="action" name="done:"/>
+                <relationship kind="outlet" name="nameField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="typeControl" candidateClass="UISegmentedControl"/>
+            </relationships>
         </class>
         <class className="GCCourseListViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GCCourseListViewController.h"/>

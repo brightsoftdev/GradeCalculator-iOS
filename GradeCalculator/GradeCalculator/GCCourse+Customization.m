@@ -51,6 +51,10 @@
             totalAvailable += component.pointsAvailable.doubleValue;
         }
         
+        if (totalAvailable == 0) {
+            return [NSNumber numberWithInt:0];
+        }
+        
         return [NSNumber numberWithDouble:totalEarned / totalAvailable];
         
     } else {

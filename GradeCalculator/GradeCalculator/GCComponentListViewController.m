@@ -29,6 +29,10 @@
 #define kEditComponentDetailSegueIdentifier @"ComponentListToEditComponentDetailSegue"
 #define kAddComponentDetailSegueIdentifier @"ComponentListToAddComponentDetailSegue"
 
+#define kComponentCellIdentifier @"CourseDetailGradeComponentCell"
+#define kNewComponentCellIdentifier "CourseDetailNewComponentCell"
+
+
 @interface GCComponentListViewController ()
 
 @end

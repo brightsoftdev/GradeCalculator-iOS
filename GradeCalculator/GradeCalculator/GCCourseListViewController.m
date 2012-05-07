@@ -24,42 +24,33 @@
 //
 
 #import "GCCourseListViewController.h"
+#import "GCAppDelegate.h"
+#import "GCCourse+Customization.h"
 
 #define kCourseDetailSegueIdentifier @"CourseListToCourseDetailSegue"
 #define kComponentListSegueIdentifier @"CourseListToComponentListSegue"
 
+#define kCourseCellIdentifier @"CourseListCourseCell"
+
 
 @interface GCCourseListViewController ()
+
+@property (nonatomic, strong) NSArray *courses;
+
+@property (nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
 
 @end
 
 @implementation GCCourseListViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+@synthesize courses = _courses;
 
-- (void)viewDidLoad
+- (void)viewWillAppear:(BOOL)animated
 {
-    [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
-
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+    [super viewWillAppear:animated];
+    
+    self.courses = [self.managedObjectContext executeFetchRequest:[NSFetchRequest fetchRequestWithEntityName:kGCCourseEntityName] error:nil];
+    [self.tableView reloadData];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -67,28 +58,34 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (NSArray *)courses
+{
+    if (_courses == nil) {
+        _courses = [NSArray array];
+    }
+    
+    return _courses;
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return self.courses.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    GCCourse *currentCourse = [self.courses objectAtIndex:indexPath.row];
     
-    // Configure the cell...
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCourseCellIdentifier];
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"%@: %@%%", currentCourse.name, currentCourse.overallScore];
     
     return cell;
 }
@@ -143,6 +140,13 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+}
+
+#pragma mark - Private Methods
+
+- (NSManagedObjectContext *)managedObjectContext
+{
+    return [(GCAppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
 }
 
 @end

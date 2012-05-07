@@ -24,12 +24,24 @@
 //
 
 #import "GCCourseDetailViewController.h"
+#import "GCAppDelegate.h"
+#import "GCCourse+Customization.h"
 
 @interface GCCourseDetailViewController ()
+
+@property (nonatomic, weak) IBOutlet UITextField *nameField;
+@property (nonatomic, weak) IBOutlet UISegmentedControl *typeControl;
+@property (nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
+
+- (IBAction)cancel:(id)sender;
+- (IBAction)done:(id)sender;
 
 @end
 
 @implementation GCCourseDetailViewController
+
+@synthesize nameField = _nameField;
+@synthesize typeControl = _typeControl;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -55,6 +67,26 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (NSManagedObjectContext *)managedObjectContext
+{
+    return [(GCAppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
+}
+
+#pragma mark - IBActions
+
+- (void)cancel:(id)sender
+{
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+- (void)done:(id)sender
+{
+    GCCourse *newCourse = [NSEntityDescription insertNewObjectForEntityForName:kGCCourseEntityName inManagedObjectContext:self.managedObjectContext];
+    newCourse.name = self.nameField.text;
+    newCourse.gradingStyle = [NSNumber numberWithInt:(self.typeControl.selected == 0 ? GCCourseGradingStylePointTotal : GCCourseGradingStyleWeightedPercentages)];
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 @end
