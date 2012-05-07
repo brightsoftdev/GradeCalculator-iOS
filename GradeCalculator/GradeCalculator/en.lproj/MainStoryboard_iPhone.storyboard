@@ -6,11 +6,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller - Courses-->
+        <!--Course List View Controller - Courses-->
         <scene sceneID="arJ-38-lzB">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Im3-2X-LyH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController id="tty-wd-CaT" sceneMemberID="viewController">
+                <tableViewController id="tty-wd-CaT" customClass="GCCourseListViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="kdp-GW-KZs">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -34,7 +34,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <segue destination="y8p-Eb-N6E" kind="push" id="Bx8-5G-Kej"/>
+                                    <segue destination="y8p-Eb-N6E" kind="push" identifier="CourseListToComponentListSegue" id="Bx8-5G-Kej"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -46,7 +46,7 @@
                     <navigationItem key="navigationItem" title="Courses" id="dPr-y9-SIE">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="H3t-M0-oc5">
                             <connections>
-                                <segue destination="vd6-Sg-Onz" kind="modal" id="qBY-KG-E7i"/>
+                                <segue destination="vd6-Sg-Onz" kind="modal" identifier="CourseListToCourseDetailSegue" id="qBY-KG-E7i"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -54,11 +54,11 @@
             </objects>
             <point key="canvasLocation" x="930" y="76"/>
         </scene>
-        <!--Table View Controller - Course Detail-->
+        <!--Component List View Controller - Course Detail-->
         <scene sceneID="FLR-jf-v43">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ycm-sv-i7F" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController id="y8p-Eb-N6E" sceneMemberID="viewController">
+                <tableViewController id="y8p-Eb-N6E" customClass="GCComponentListViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="114" sectionHeaderHeight="22" sectionFooterHeight="22" id="KbU-2E-wof">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -93,7 +93,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <segue destination="kB1-gG-jTT" kind="push" id="hYL-hX-YZG"/>
+                                    <segue destination="kB1-gG-jTT" kind="push" identifier="ComponentListToEditComponentDetailSegue" id="hYL-hX-YZG"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CourseDetailNewComponentCell" textLabel="p6b-gT-7IY" rowHeight="44" style="IBUITableViewCellStyleDefault" id="EJ1-7o-3nl">
@@ -114,7 +114,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <segue destination="kB1-gG-jTT" kind="push" id="aZG-0y-3b7"/>
+                                    <segue destination="kB1-gG-jTT" kind="push" identifier="ComponentListToAddComponentDetailSegue" id="aZG-0y-3b7"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -126,19 +126,19 @@
                     <navigationItem key="navigationItem" title="Course Detail" id="mdV-k5-lxX">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="Fmg-un-8gv">
                             <connections>
-                                <segue destination="vd6-Sg-Onz" kind="modal" id="jCU-Oc-nnq"/>
+                                <segue destination="vd6-Sg-Onz" kind="modal" identifier="ComponentListToCourseDetailSegue" id="jCU-Oc-nnq"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="1378" y="86"/>
+            <point key="canvasLocation" x="1426" y="296"/>
         </scene>
-        <!--Table View Controller - Add/Edit Component-->
+        <!--Component Detail View Controller - Add/Edit Component-->
         <scene sceneID="2GW-TR-VoG">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zw7-Ft-Huv" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController id="kB1-gG-jTT" sceneMemberID="viewController">
+                <tableViewController id="kB1-gG-jTT" customClass="GCComponentDetailViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="6QS-Kv-uDg">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -240,13 +240,13 @@
                     <navigationItem key="navigationItem" title="Add/Edit Component" id="Zd1-1Q-CtH"/>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="1886" y="-21"/>
+            <point key="canvasLocation" x="1962" y="86"/>
         </scene>
-        <!--View Controller - Add/Edit Component-->
+        <!--Course Detail View Controller - Add/Edit Component-->
         <scene sceneID="jg3-KS-I8X">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eiT-l0-sP3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="vd6-Sg-Onz" sceneMemberID="viewController">
+                <viewController id="vd6-Sg-Onz" customClass="GCCourseDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MAw-q9-dgu">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -295,7 +295,7 @@
                     <navigationItem key="navigationItem" title="Add/Edit Component" id="KuS-HB-iI9"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1135" y="-494"/>
+            <point key="canvasLocation" x="1962" y="-522"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nUr-Hr-Pua">
@@ -316,13 +316,27 @@
             <point key="canvasLocation" x="404" y="76"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="GCComponentDetailViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GCComponentDetailViewController.h"/>
+        </class>
+        <class className="GCComponentListViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GCComponentListViewController.h"/>
+        </class>
+        <class className="GCCourseDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GCCourseDetailViewController.h"/>
+        </class>
+        <class className="GCCourseListViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GCCourseListViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="qBY-KG-E7i"/>
-        <segue reference="hYL-hX-YZG"/>
+        <segue reference="jCU-Oc-nnq"/>
+        <segue reference="aZG-0y-3b7"/>
     </inferredMetricsTieBreakers>
 </document>
