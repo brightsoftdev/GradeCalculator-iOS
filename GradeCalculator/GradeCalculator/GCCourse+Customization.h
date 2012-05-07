@@ -1,5 +1,5 @@
 //
-//  GCViewController.m
+//  GCCourse+Customization.h
 //  Weighted Grade Calculator
 //
 //  Copyright (C) 2012 Jimmy Theis. Licensed under the MIT License:
@@ -23,33 +23,19 @@
 //  SOFTWARE.
 //
 
-#import "GCViewController.h"
+#import "GCCourse.h"
 
-@interface GCViewController ()
+#define kGCCourseEntityName @"GCCourse"
 
-@end
+typedef enum {
+    GCCourseGradingStylePointTotal = 0,
+    GCCourseGradingStyleWeightedPercentages
+} GCCourseGradingStyle;
 
-@implementation GCViewController
+@interface GCCourse (Customization)
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-}
+@property (nonatomic, assign) GCCourseGradingStyle gradingStyleValue;
 
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
-    } else {
-        return YES;
-    }
-}
+@property (nonatomic, readonly) NSNumber *overallScore;
 
 @end

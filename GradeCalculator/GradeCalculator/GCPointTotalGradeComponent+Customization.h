@@ -1,5 +1,5 @@
 //
-//  GCGradeComponent.h
+//  GCPointTotalGradeComponent+Customization.h
 //  Weighted Grade Calculator
 //
 //  Copyright (C) 2012 Jimmy Theis. Licensed under the MIT License:
@@ -23,14 +23,10 @@
 //  SOFTWARE.
 //
 
-#import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
+#import "GCPointTotalGradeComponent.h"
 
-@class GCCourse;
+#define kGCPointTotalGradeComponentEntityName @"GCPointTotalGradeComponent"
 
-@interface GCGradeComponent : NSManagedObject
-
-@property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) GCCourse *course;
+@interface GCPointTotalGradeComponent (Customization)
 
 @end

@@ -24,12 +24,13 @@
 //
 
 #import "GCCourse.h"
+#import "GCGradeComponent.h"
 
 
 @implementation GCCourse
 
-@dynamic name;
 @dynamic gradingStyle;
+@dynamic name;
 @dynamic gradeComponents;
 
 @end

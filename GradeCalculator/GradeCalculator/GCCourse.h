@@ -26,21 +26,25 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-#define kGCCourseEntityName @"GCCourse"
-
+@class GCGradeComponent;
 
 @interface GCCourse : NSManagedObject
 
-@property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSNumber * gradingStyle;
-@property (nonatomic, retain) NSSet *gradeComponents;
+@property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSOrderedSet *gradeComponents;
 @end
 
 @interface GCCourse (CoreDataGeneratedAccessors)
 
-- (void)addGradeComponentsObject:(NSManagedObject *)value;
-- (void)removeGradeComponentsObject:(NSManagedObject *)value;
-- (void)addGradeComponents:(NSSet *)values;
-- (void)removeGradeComponents:(NSSet *)values;
-
+- (void)insertObject:(GCGradeComponent *)value inGradeComponentsAtIndex:(NSUInteger)idx;
+- (void)removeObjectFromGradeComponentsAtIndex:(NSUInteger)idx;
+- (void)insertGradeComponents:(NSArray *)value atIndexes:(NSIndexSet *)indexes;
+- (void)removeGradeComponentsAtIndexes:(NSIndexSet *)indexes;
+- (void)replaceObjectInGradeComponentsAtIndex:(NSUInteger)idx withObject:(GCGradeComponent *)value;
+- (void)replaceGradeComponentsAtIndexes:(NSIndexSet *)indexes withGradeComponents:(NSArray *)values;
+- (void)addGradeComponentsObject:(GCGradeComponent *)value;
+- (void)removeGradeComponentsObject:(GCGradeComponent *)value;
+- (void)addGradeComponents:(NSOrderedSet *)values;
+- (void)removeGradeComponents:(NSOrderedSet *)values;
 @end

@@ -27,8 +27,6 @@
 #import <CoreData/CoreData.h>
 #import "GCGradeComponent.h"
 
-#define kGCPercentageGradeComponentEntityName @"GCPercentageGradeComponent"
-
 
 @interface GCPercentageGradeComponent : GCGradeComponent
 

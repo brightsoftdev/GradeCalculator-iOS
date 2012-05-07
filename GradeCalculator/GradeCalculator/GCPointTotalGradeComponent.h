@@ -27,8 +27,6 @@
 #import <CoreData/CoreData.h>
 #import "GCGradeComponent.h"
 
-#define kGCPointTotalGradeComponentEntityName @"GCPointTotalGradeComponent"
-
 
 @interface GCPointTotalGradeComponent : GCGradeComponent
 

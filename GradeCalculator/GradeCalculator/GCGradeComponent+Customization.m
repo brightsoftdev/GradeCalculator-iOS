@@ -1,5 +1,5 @@
 //
-//  GCViewController.h
+//  GCGradeComponent+Customization.m
 //  Weighted Grade Calculator
 //
 //  Copyright (C) 2012 Jimmy Theis. Licensed under the MIT License:
@@ -23,8 +23,8 @@
 //  SOFTWARE.
 //
 
-#import <UIKit/UIKit.h>
+#import "GCGradeComponent+Customization.h"
 
-@interface GCViewController : UIViewController
+@implementation GCGradeComponent (Customization)
 
 @end

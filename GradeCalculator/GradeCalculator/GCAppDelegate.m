@@ -27,7 +27,7 @@
 
 #import "GCAppDelegate.h"
 
-#import "GCCourse.h"
+#import "GCCourse+Customization.h"
 
 @interface GCAppDelegate ()
 

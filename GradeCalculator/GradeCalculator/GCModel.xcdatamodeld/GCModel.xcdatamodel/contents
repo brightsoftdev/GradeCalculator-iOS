@@ -3,7 +3,7 @@
     <entity name="GCCourse" representedClassName="GCCourse" syncable="YES">
         <attribute name="gradingStyle" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="gradeComponents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GCGradeComponent" inverseName="course" inverseEntity="GCGradeComponent" syncable="YES"/>
+        <relationship name="gradeComponents" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="GCGradeComponent" inverseName="course" inverseEntity="GCGradeComponent" syncable="YES"/>
     </entity>
     <entity name="GCGradeComponent" representedClassName="GCGradeComponent" isAbstract="YES" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -20,7 +20,7 @@
     <elements>
         <element name="GCCourse" positionX="142" positionY="-144" width="128" height="90"/>
         <element name="GCGradeComponent" positionX="133" positionY="51" width="128" height="75"/>
-        <element name="GCPointTotalGradeComponent" positionX="-72" positionY="51" width="128" height="75"/>
         <element name="GCPercentageGradeComponent" positionX="351" positionY="51" width="128" height="75"/>
+        <element name="GCPointTotalGradeComponent" positionX="-72" positionY="51" width="128" height="75"/>
     </elements>
 </model>
