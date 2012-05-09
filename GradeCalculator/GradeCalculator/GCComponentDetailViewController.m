@@ -24,43 +24,102 @@
 //
 
 #import "GCComponentDetailViewController.h"
+#import "GCAppDelegate.h"
+#import "GCPointTotalGradeComponent.h"
+#import "GCPercentageGradeComponent.h"
 
 @interface GCComponentDetailViewController ()
 
+@property (nonatomic, weak) IBOutlet UITextField *nameField;
+
+@property (nonatomic, weak) IBOutlet UITextField *earnedField;
+
+@property (nonatomic, weak) IBOutlet UITextField *availableField;
+
+@property (nonatomic, weak) IBOutlet UILabel *earnedLabel;
+
+@property (nonatomic, weak) IBOutlet UILabel *availableLabel;
+
+@property (nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
+
+- (IBAction)componentDataChanged:(id)sender;
+
 @end
+
 
 @implementation GCComponentDetailViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+@synthesize gradeComponent = _gradeComponent;
+@synthesize nameField = _nameField;
+@synthesize earnedField = _earnedField;
+@synthesize availableField = _availableField;
+@synthesize earnedLabel = _earnedLabel;
+@synthesize availableLabel = _availableLabel;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    if (self.gradeComponent.name.length == 0) {
+        self.title = @"New Component";
+    } else {
+        self.title = self.gradeComponent.name;
+    }
+    
+    if ([self.gradeComponent isKindOfClass:[GCPointTotalGradeComponent class]]) {
+        self.earnedLabel.text = @"Points Earned";
+        self.availableLabel.text = @"Points Available";
+    } else {
+        self.earnedLabel.text = @"Percentage Earned (%)";
+        self.availableLabel.text = @"Weight (%)";
+    }
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (NSManagedObjectContext *)managedObjectContext
+{
+    return [(GCAppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
+}
+
+#pragma mark - IBActions
+
+- (void)componentDataChanged:(id)sender
+{
+    if ([self.gradeComponent isKindOfClass:[GCPointTotalGradeComponent class]]) {
+        
+        GCPointTotalGradeComponent *pointComponent = (GCPointTotalGradeComponent *) self.gradeComponent;
+        pointComponent.name = self.nameField.text;
+        
+        NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
+        [f setNumberStyle:NSNumberFormatterDecimalStyle];
+        
+        pointComponent.pointsEarned = [f numberFromString:self.earnedField.text];
+        pointComponent.pointsAvailable = [f numberFromString:self.availableField.text];
+        
+        [self.managedObjectContext save:nil];
+        
+    } else if ([self.gradeComponent isKindOfClass:[GCPercentageGradeComponent class]]) {
+        
+        GCPercentageGradeComponent *percentageComponent = (GCPercentageGradeComponent *) self.gradeComponent;
+        percentageComponent.name = self.nameField.text;
+        
+        NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
+        [f setNumberStyle:NSNumberFormatterDecimalStyle];
+        
+        percentageComponent.percentageEarned = [f numberFromString:self.earnedField.text];
+        percentageComponent.weight = [f numberFromString:self.earnedField.text];
+        
+        [self.managedObjectContext save:nil];
+    }
 }
 
 @end

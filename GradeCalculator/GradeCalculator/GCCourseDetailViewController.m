@@ -25,7 +25,7 @@
 
 #import "GCCourseDetailViewController.h"
 #import "GCAppDelegate.h"
-#import "GCCourse+Customization.h"
+#import "GCCourse.h"
 
 @interface GCCourseDetailViewController ()
 

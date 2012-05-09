@@ -25,6 +25,8 @@
 
 #import "GCCourse.h"
 #import "GCGradeComponent.h"
+#import "GCPointTotalGradeComponent.h"
+#import "GCPercentageGradeComponent.h"
 
 
 @implementation GCCourse
@@ -32,5 +34,45 @@
 @dynamic gradingStyle;
 @dynamic name;
 @dynamic gradeComponents;
+
+- (GCCourseGradingStyle)gradingStyleValue
+{
+    return self.gradingStyle.intValue;
+}
+
+- (void)setGradingStyleValue:(GCCourseGradingStyle)gradingStyleValue
+{
+    self.gradingStyle = [NSNumber numberWithInt:gradingStyleValue];
+}
+
+- (NSNumber *)overallScore
+{
+    if (self.gradingStyleValue == GCCourseGradingStylePointTotal) {
+        
+        double totalEarned = 0;
+        double totalAvailable = 0;
+        
+        for (GCPointTotalGradeComponent *component in self.gradeComponents) {
+            totalEarned += component.pointsEarned.doubleValue;
+            totalAvailable += component.pointsAvailable.doubleValue;
+        }
+        
+        if (totalAvailable == 0) {
+            return [NSNumber numberWithInt:0];
+        }
+        
+        return [NSNumber numberWithDouble:totalEarned / totalAvailable];
+        
+    } else {
+        
+        double totalScore = 0;
+        
+        for (GCPercentageGradeComponent *component in self.gradeComponents) {
+            totalScore += component.weight.doubleValue * component.percentageEarned.doubleValue;
+        }
+        
+        return [NSNumber numberWithDouble:totalScore];
+    }
+}
 
 @end

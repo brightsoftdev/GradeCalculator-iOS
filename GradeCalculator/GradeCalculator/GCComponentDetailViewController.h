@@ -25,6 +25,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class GCGradeComponent;
+
 @interface GCComponentDetailViewController : UITableViewController
+
+@property (nonatomic, strong) GCGradeComponent *gradeComponent;
 
 @end

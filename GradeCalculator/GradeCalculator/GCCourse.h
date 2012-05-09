@@ -28,8 +28,19 @@
 
 @class GCGradeComponent;
 
+#define kGCCourseEntityName @"GCCourse"
+
+
+typedef enum {
+    GCCourseGradingStylePointTotal = 0,
+    GCCourseGradingStyleWeightedPercentages
+} GCCourseGradingStyle;
+
+
 @interface GCCourse : NSManagedObject
 
+@property (nonatomic, assign) GCCourseGradingStyle gradingStyleValue;
+@property (nonatomic, readonly) NSNumber *overallScore;
 @property (nonatomic, retain) NSNumber * gradingStyle;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSOrderedSet *gradeComponents;

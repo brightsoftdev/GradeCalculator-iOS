@@ -26,8 +26,7 @@
 #import <CoreData/CoreData.h>
 
 #import "GCAppDelegate.h"
-
-#import "GCCourse+Customization.h"
+#import "GCCourse.h"
 
 @interface GCAppDelegate ()
 
@@ -46,10 +45,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [NSEntityDescription insertNewObjectForEntityForName:kGCCourseEntityName inManagedObjectContext:self.managedObjectContext];
-    
-    
-    // Override point for customization after application launch.
     return YES;
 }
 

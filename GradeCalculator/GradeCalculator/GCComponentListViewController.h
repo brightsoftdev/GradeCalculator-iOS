@@ -25,6 +25,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GCComponentListViewController : UITableViewController
+@class GCCourse;
+
+@interface GCComponentListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+
+@property (nonatomic, strong) GCCourse *course;
 
 @end

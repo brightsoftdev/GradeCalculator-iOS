@@ -24,39 +24,64 @@
 //
 
 #import "GCComponentListViewController.h"
+#import "GCAppDelegate.h"
+#import "GCComponentDetailViewController.h"
+#import "GCCourse.h"
+#import "GCPointTotalGradeComponent+Customization.h"
+#import "GCPercentageGradeComponent+Customization.h"
 
 #define kCourseDetailSegueIdentifier @"ComponentListToCourseDetailSegue"
 #define kEditComponentDetailSegueIdentifier @"ComponentListToEditComponentDetailSegue"
 #define kAddComponentDetailSegueIdentifier @"ComponentListToAddComponentDetailSegue"
 
 #define kComponentCellIdentifier @"CourseDetailGradeComponentCell"
-#define kNewComponentCellIdentifier "CourseDetailNewComponentCell"
+#define kNewComponentCellIdentifier @"CourseDetailNewComponentCell"
+
+
+@interface GCComponentTableViewCell : UITableViewCell
+
+@property (nonatomic, weak) IBOutlet UILabel *nameLabel;
+
+@property (nonatomic, weak) IBOutlet UILabel *detailLabel;
+
+@property (nonatomic, weak) IBOutlet UISlider *gradeSlider;
+
+@end
+
+
+@implementation GCComponentTableViewCell
+
+@synthesize nameLabel = _nameLabel;
+@synthesize detailLabel = _detailLabel;
+@synthesize gradeSlider = _gradeSlider;
+
+@end
 
 
 @interface GCComponentListViewController ()
+
+@property (nonatomic, weak) IBOutlet UITableView *tableView;
+
+@property (nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
 
 @end
 
 @implementation GCComponentListViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+@synthesize tableView = _tableView;
+@synthesize course = _course;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+}
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    self.navigationItem.title = self.course.name;
+    [self.tableView reloadData];
 }
 
 - (void)viewDidUnload
@@ -71,30 +96,79 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:kAddComponentDetailSegueIdentifier]) {
+        GCComponentDetailViewController *componentDetail = segue.destinationViewController;
+        
+        if (self.course.gradingStyleValue == GCCourseGradingStylePointTotal) {
+            GCPointTotalGradeComponent *newComponent = [NSEntityDescription insertNewObjectForEntityForName:kGCPointTotalGradeComponentEntityName inManagedObjectContext:self.managedObjectContext];
+            newComponent.course = self.course;
+            componentDetail.gradeComponent = newComponent;
+            
+            // TODO: Fix this when it's fixed
+            NSMutableOrderedSet* tempSet = [NSMutableOrderedSet orderedSetWithOrderedSet:self.course.gradeComponents];
+            [tempSet addObject:newComponent];
+            self.course.gradeComponents = tempSet;
+            
+        } else {
+            GCPercentageGradeComponent *newComponent = [NSEntityDescription insertNewObjectForEntityForName:kGCPercentageGradeComponentEntityName inManagedObjectContext:self.managedObjectContext];
+            newComponent.course = self.course;
+            componentDetail.gradeComponent = newComponent;
+            
+            // TODO: Fix this when it's fixed
+            NSMutableOrderedSet* tempSet = [NSMutableOrderedSet orderedSetWithOrderedSet:self.course.gradeComponents];
+            [tempSet addObject:newComponent];
+            self.course.gradeComponents = tempSet;
+        }
+        
+        NSLog(@"Components: %d", self.course.gradeComponents.count);
+        
+    } else if ([segue.identifier isEqualToString:kEditComponentDetailSegueIdentifier]) {
+        GCComponentDetailViewController *componentDetail = segue.destinationViewController;
+        componentDetail.gradeComponent = [self.course.gradeComponents objectAtIndex:self.tableView.indexPathForSelectedRow.row];
+    }
+}
+
+- (NSManagedObjectContext *)managedObjectContext
+{
+    return [(GCAppDelegate *) [[UIApplication sharedApplication] delegate] managedObjectContext];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return self.course.gradeComponents.count + 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (indexPath.row == self.course.gradeComponents.count) {
+        return [tableView dequeueReusableCellWithIdentifier:kNewComponentCellIdentifier];
+    }
     
-    // Configure the cell...
+    GCComponentTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kComponentCellIdentifier];
+    
+    GCGradeComponent *currentComponent = [self.course.gradeComponents objectAtIndex:indexPath.row];
+    
+    cell.nameLabel.text = currentComponent.name;
     
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == self.course.gradeComponents.count) {
+        return 44;
+    }
+    
+    return 114;
 }
 
 /*
@@ -140,13 +214,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 @end

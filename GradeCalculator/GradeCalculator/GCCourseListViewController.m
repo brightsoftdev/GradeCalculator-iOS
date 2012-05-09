@@ -25,7 +25,8 @@
 
 #import "GCCourseListViewController.h"
 #import "GCAppDelegate.h"
-#import "GCCourse+Customization.h"
+#import "GCComponentListViewController.h"
+#import "GCCourse.h"
 
 #define kCourseDetailSegueIdentifier @"CourseListToCourseDetailSegue"
 #define kComponentListSegueIdentifier @"CourseListToComponentListSegue"
@@ -65,6 +66,14 @@
     }
     
     return _courses;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:kComponentListSegueIdentifier]) {
+        GCComponentListViewController *componentList = segue.destinationViewController;
+        componentList.course = [self.courses objectAtIndex:self.tableView.indexPathForSelectedRow.row];
+    }
 }
 
 #pragma mark - Table view data source
