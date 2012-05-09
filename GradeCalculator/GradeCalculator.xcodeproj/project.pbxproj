@@ -1,0 +1,559 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9231430C1558468100E7A723 /* GCCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = 9231430B1558468100E7A723 /* GCCourse.m */; };
+		923143101558475400E7A723 /* GCGradeComponent+Customization.m in Sources */ = {isa = PBXBuildFile; fileRef = 9231430F1558475400E7A723 /* GCGradeComponent+Customization.m */; };
+		923143131558476700E7A723 /* GCPointTotalGradeComponent+Customization.m in Sources */ = {isa = PBXBuildFile; fileRef = 923143121558476600E7A723 /* GCPointTotalGradeComponent+Customization.m */; };
+		923143161558477800E7A723 /* GCPercentageGradeComponent+Customization.m in Sources */ = {isa = PBXBuildFile; fileRef = 923143151558477800E7A723 /* GCPercentageGradeComponent+Customization.m */; };
+		9231431A1558480E00E7A723 /* GCCourseListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 923143191558480E00E7A723 /* GCCourseListViewController.m */; };
+		9231431D1558482200E7A723 /* GCCourseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9231431C1558482200E7A723 /* GCCourseDetailViewController.m */; };
+		923143201558483600E7A723 /* GCComponentListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9231431F1558483600E7A723 /* GCComponentListViewController.m */; };
+		923143231558484400E7A723 /* GCComponentDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 923143221558484400E7A723 /* GCComponentDetailViewController.m */; };
+		92D391C21557906A003D6664 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92D391C11557906A003D6664 /* UIKit.framework */; };
+		92D391C41557906A003D6664 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92D391C31557906A003D6664 /* Foundation.framework */; };
+		92D391C61557906A003D6664 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92D391C51557906A003D6664 /* CoreGraphics.framework */; };
+		92D391CC1557906A003D6664 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 92D391CA1557906A003D6664 /* InfoPlist.strings */; };
+		92D391CE1557906A003D6664 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D391CD1557906A003D6664 /* main.m */; };
+		92D391D21557906A003D6664 /* GCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D391D11557906A003D6664 /* GCAppDelegate.m */; };
+		92D391D51557906A003D6664 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92D391D31557906A003D6664 /* MainStoryboard_iPhone.storyboard */; };
+		92D391D81557906A003D6664 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92D391D61557906A003D6664 /* MainStoryboard_iPad.storyboard */; };
+		92D391E31557906A003D6664 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92D391E21557906A003D6664 /* SenTestingKit.framework */; };
+		92D391E41557906A003D6664 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92D391C11557906A003D6664 /* UIKit.framework */; };
+		92D391E51557906A003D6664 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92D391C31557906A003D6664 /* Foundation.framework */; };
+		92D391ED1557906B003D6664 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 92D391EB1557906B003D6664 /* InfoPlist.strings */; };
+		92D391F01557906B003D6664 /* GradeCalculatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D391EF1557906B003D6664 /* GradeCalculatorTests.m */; };
+		92D392871557989A003D6664 /* GCModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 92D392851557989A003D6664 /* GCModel.xcdatamodeld */; };
+		92D3928D155799A9003D6664 /* GCGradeComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D3928C155799A9003D6664 /* GCGradeComponent.m */; };
+		92D39290155799B1003D6664 /* GCPercentageGradeComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D3928F155799B1003D6664 /* GCPercentageGradeComponent.m */; };
+		92D39293155799B9003D6664 /* GCPointTotalGradeComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D39292155799B9003D6664 /* GCPointTotalGradeComponent.m */; };
+		92D392951557AE7A003D6664 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92D392941557AE7A003D6664 /* CoreData.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		92D391E61557906A003D6664 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 92D391B41557906A003D6664 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 92D391BC1557906A003D6664;
+			remoteInfo = GradeCalculator;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9231430A1558468100E7A723 /* GCCourse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCCourse.h; sourceTree = "<group>"; };
+		9231430B1558468100E7A723 /* GCCourse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCCourse.m; sourceTree = "<group>"; };
+		9231430E1558475400E7A723 /* GCGradeComponent+Customization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GCGradeComponent+Customization.h"; sourceTree = "<group>"; };
+		9231430F1558475400E7A723 /* GCGradeComponent+Customization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GCGradeComponent+Customization.m"; sourceTree = "<group>"; };
+		923143111558476600E7A723 /* GCPointTotalGradeComponent+Customization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GCPointTotalGradeComponent+Customization.h"; sourceTree = "<group>"; };
+		923143121558476600E7A723 /* GCPointTotalGradeComponent+Customization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GCPointTotalGradeComponent+Customization.m"; sourceTree = "<group>"; };
+		923143141558477800E7A723 /* GCPercentageGradeComponent+Customization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GCPercentageGradeComponent+Customization.h"; sourceTree = "<group>"; };
+		923143151558477800E7A723 /* GCPercentageGradeComponent+Customization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GCPercentageGradeComponent+Customization.m"; sourceTree = "<group>"; };
+		923143181558480E00E7A723 /* GCCourseListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCCourseListViewController.h; sourceTree = "<group>"; };
+		923143191558480E00E7A723 /* GCCourseListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCCourseListViewController.m; sourceTree = "<group>"; };
+		9231431B1558482200E7A723 /* GCCourseDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCCourseDetailViewController.h; sourceTree = "<group>"; };
+		9231431C1558482200E7A723 /* GCCourseDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCCourseDetailViewController.m; sourceTree = "<group>"; };
+		9231431E1558483600E7A723 /* GCComponentListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCComponentListViewController.h; sourceTree = "<group>"; };
+		9231431F1558483600E7A723 /* GCComponentListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCComponentListViewController.m; sourceTree = "<group>"; };
+		923143211558484400E7A723 /* GCComponentDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCComponentDetailViewController.h; sourceTree = "<group>"; };
+		923143221558484400E7A723 /* GCComponentDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCComponentDetailViewController.m; sourceTree = "<group>"; };
+		92D391BD1557906A003D6664 /* GradeCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GradeCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		92D391C11557906A003D6664 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		92D391C31557906A003D6664 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		92D391C51557906A003D6664 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		92D391C91557906A003D6664 /* GradeCalculator-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GradeCalculator-Info.plist"; sourceTree = "<group>"; };
+		92D391CB1557906A003D6664 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		92D391CD1557906A003D6664 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		92D391CF1557906A003D6664 /* GradeCalculator-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GradeCalculator-Prefix.pch"; sourceTree = "<group>"; };
+		92D391D01557906A003D6664 /* GCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCAppDelegate.h; sourceTree = "<group>"; };
+		92D391D11557906A003D6664 /* GCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCAppDelegate.m; sourceTree = "<group>"; };
+		92D391D41557906A003D6664 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		92D391D71557906A003D6664 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		92D391E11557906A003D6664 /* GradeCalculatorTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GradeCalculatorTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		92D391E21557906A003D6664 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		92D391EA1557906A003D6664 /* GradeCalculatorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GradeCalculatorTests-Info.plist"; sourceTree = "<group>"; };
+		92D391EC1557906B003D6664 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		92D391EE1557906B003D6664 /* GradeCalculatorTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GradeCalculatorTests.h; sourceTree = "<group>"; };
+		92D391EF1557906B003D6664 /* GradeCalculatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GradeCalculatorTests.m; sourceTree = "<group>"; };
+		92D392861557989A003D6664 /* GCModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GCModel.xcdatamodel; sourceTree = "<group>"; };
+		92D3928B155799A9003D6664 /* GCGradeComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCGradeComponent.h; sourceTree = "<group>"; };
+		92D3928C155799A9003D6664 /* GCGradeComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCGradeComponent.m; sourceTree = "<group>"; };
+		92D3928E155799B1003D6664 /* GCPercentageGradeComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCPercentageGradeComponent.h; sourceTree = "<group>"; };
+		92D3928F155799B1003D6664 /* GCPercentageGradeComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCPercentageGradeComponent.m; sourceTree = "<group>"; };
+		92D39291155799B9003D6664 /* GCPointTotalGradeComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCPointTotalGradeComponent.h; sourceTree = "<group>"; };
+		92D39292155799B9003D6664 /* GCPointTotalGradeComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCPointTotalGradeComponent.m; sourceTree = "<group>"; };
+		92D392941557AE7A003D6664 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		92D391BA1557906A003D6664 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92D392951557AE7A003D6664 /* CoreData.framework in Frameworks */,
+				92D391C21557906A003D6664 /* UIKit.framework in Frameworks */,
+				92D391C41557906A003D6664 /* Foundation.framework in Frameworks */,
+				92D391C61557906A003D6664 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92D391DD1557906A003D6664 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92D391E31557906A003D6664 /* SenTestingKit.framework in Frameworks */,
+				92D391E41557906A003D6664 /* UIKit.framework in Frameworks */,
+				92D391E51557906A003D6664 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9231430D1558471D00E7A723 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				923143181558480E00E7A723 /* GCCourseListViewController.h */,
+				923143191558480E00E7A723 /* GCCourseListViewController.m */,
+				9231431B1558482200E7A723 /* GCCourseDetailViewController.h */,
+				9231431C1558482200E7A723 /* GCCourseDetailViewController.m */,
+				9231431E1558483600E7A723 /* GCComponentListViewController.h */,
+				9231431F1558483600E7A723 /* GCComponentListViewController.m */,
+				923143211558484400E7A723 /* GCComponentDetailViewController.h */,
+				923143221558484400E7A723 /* GCComponentDetailViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		92D391B21557906A003D6664 = {
+			isa = PBXGroup;
+			children = (
+				92D391C71557906A003D6664 /* GradeCalculator */,
+				92D391E81557906A003D6664 /* GradeCalculatorTests */,
+				92D391C01557906A003D6664 /* Frameworks */,
+				92D391BE1557906A003D6664 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		92D391BE1557906A003D6664 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				92D391BD1557906A003D6664 /* GradeCalculator.app */,
+				92D391E11557906A003D6664 /* GradeCalculatorTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		92D391C01557906A003D6664 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				92D392941557AE7A003D6664 /* CoreData.framework */,
+				92D391C11557906A003D6664 /* UIKit.framework */,
+				92D391C31557906A003D6664 /* Foundation.framework */,
+				92D391C51557906A003D6664 /* CoreGraphics.framework */,
+				92D391E21557906A003D6664 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		92D391C71557906A003D6664 /* GradeCalculator */ = {
+			isa = PBXGroup;
+			children = (
+				92D391D31557906A003D6664 /* MainStoryboard_iPhone.storyboard */,
+				92D391D61557906A003D6664 /* MainStoryboard_iPad.storyboard */,
+				92D391D01557906A003D6664 /* GCAppDelegate.h */,
+				92D391D11557906A003D6664 /* GCAppDelegate.m */,
+				92D3928415579878003D6664 /* Model */,
+				9231430D1558471D00E7A723 /* View Controllers */,
+				92D391C81557906A003D6664 /* Supporting Files */,
+			);
+			path = GradeCalculator;
+			sourceTree = "<group>";
+		};
+		92D391C81557906A003D6664 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				92D391C91557906A003D6664 /* GradeCalculator-Info.plist */,
+				92D391CA1557906A003D6664 /* InfoPlist.strings */,
+				92D391CD1557906A003D6664 /* main.m */,
+				92D391CF1557906A003D6664 /* GradeCalculator-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		92D391E81557906A003D6664 /* GradeCalculatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				92D391EE1557906B003D6664 /* GradeCalculatorTests.h */,
+				92D391EF1557906B003D6664 /* GradeCalculatorTests.m */,
+				92D391E91557906A003D6664 /* Supporting Files */,
+			);
+			path = GradeCalculatorTests;
+			sourceTree = "<group>";
+		};
+		92D391E91557906A003D6664 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				92D391EA1557906A003D6664 /* GradeCalculatorTests-Info.plist */,
+				92D391EB1557906B003D6664 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		92D3928415579878003D6664 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				92D392851557989A003D6664 /* GCModel.xcdatamodeld */,
+				9231430A1558468100E7A723 /* GCCourse.h */,
+				9231430B1558468100E7A723 /* GCCourse.m */,
+				92D3928B155799A9003D6664 /* GCGradeComponent.h */,
+				92D3928C155799A9003D6664 /* GCGradeComponent.m */,
+				9231430E1558475400E7A723 /* GCGradeComponent+Customization.h */,
+				9231430F1558475400E7A723 /* GCGradeComponent+Customization.m */,
+				92D39291155799B9003D6664 /* GCPointTotalGradeComponent.h */,
+				92D39292155799B9003D6664 /* GCPointTotalGradeComponent.m */,
+				923143111558476600E7A723 /* GCPointTotalGradeComponent+Customization.h */,
+				923143121558476600E7A723 /* GCPointTotalGradeComponent+Customization.m */,
+				92D3928E155799B1003D6664 /* GCPercentageGradeComponent.h */,
+				92D3928F155799B1003D6664 /* GCPercentageGradeComponent.m */,
+				923143141558477800E7A723 /* GCPercentageGradeComponent+Customization.h */,
+				923143151558477800E7A723 /* GCPercentageGradeComponent+Customization.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		92D391BC1557906A003D6664 /* GradeCalculator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92D391F31557906B003D6664 /* Build configuration list for PBXNativeTarget "GradeCalculator" */;
+			buildPhases = (
+				92D391B91557906A003D6664 /* Sources */,
+				92D391BA1557906A003D6664 /* Frameworks */,
+				92D391BB1557906A003D6664 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GradeCalculator;
+			productName = GradeCalculator;
+			productReference = 92D391BD1557906A003D6664 /* GradeCalculator.app */;
+			productType = "com.apple.product-type.application";
+		};
+		92D391E01557906A003D6664 /* GradeCalculatorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92D391F61557906B003D6664 /* Build configuration list for PBXNativeTarget "GradeCalculatorTests" */;
+			buildPhases = (
+				92D391DC1557906A003D6664 /* Sources */,
+				92D391DD1557906A003D6664 /* Frameworks */,
+				92D391DE1557906A003D6664 /* Resources */,
+				92D391DF1557906A003D6664 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				92D391E71557906A003D6664 /* PBXTargetDependency */,
+			);
+			name = GradeCalculatorTests;
+			productName = GradeCalculatorTests;
+			productReference = 92D391E11557906A003D6664 /* GradeCalculatorTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		92D391B41557906A003D6664 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = GC;
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = "Jimmy Theis";
+			};
+			buildConfigurationList = 92D391B71557906A003D6664 /* Build configuration list for PBXProject "GradeCalculator" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 92D391B21557906A003D6664;
+			productRefGroup = 92D391BE1557906A003D6664 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				92D391BC1557906A003D6664 /* GradeCalculator */,
+				92D391E01557906A003D6664 /* GradeCalculatorTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		92D391BB1557906A003D6664 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92D391CC1557906A003D6664 /* InfoPlist.strings in Resources */,
+				92D391D51557906A003D6664 /* MainStoryboard_iPhone.storyboard in Resources */,
+				92D391D81557906A003D6664 /* MainStoryboard_iPad.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92D391DE1557906A003D6664 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92D391ED1557906B003D6664 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		92D391DF1557906A003D6664 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		92D391B91557906A003D6664 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92D391CE1557906A003D6664 /* main.m in Sources */,
+				92D391D21557906A003D6664 /* GCAppDelegate.m in Sources */,
+				92D392871557989A003D6664 /* GCModel.xcdatamodeld in Sources */,
+				92D3928D155799A9003D6664 /* GCGradeComponent.m in Sources */,
+				92D39290155799B1003D6664 /* GCPercentageGradeComponent.m in Sources */,
+				92D39293155799B9003D6664 /* GCPointTotalGradeComponent.m in Sources */,
+				9231430C1558468100E7A723 /* GCCourse.m in Sources */,
+				923143101558475400E7A723 /* GCGradeComponent+Customization.m in Sources */,
+				923143131558476700E7A723 /* GCPointTotalGradeComponent+Customization.m in Sources */,
+				923143161558477800E7A723 /* GCPercentageGradeComponent+Customization.m in Sources */,
+				9231431A1558480E00E7A723 /* GCCourseListViewController.m in Sources */,
+				9231431D1558482200E7A723 /* GCCourseDetailViewController.m in Sources */,
+				923143201558483600E7A723 /* GCComponentListViewController.m in Sources */,
+				923143231558484400E7A723 /* GCComponentDetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92D391DC1557906A003D6664 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92D391F01557906B003D6664 /* GradeCalculatorTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		92D391E71557906A003D6664 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 92D391BC1557906A003D6664 /* GradeCalculator */;
+			targetProxy = 92D391E61557906A003D6664 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		92D391CA1557906A003D6664 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				92D391CB1557906A003D6664 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		92D391D31557906A003D6664 /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				92D391D41557906A003D6664 /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		92D391D61557906A003D6664 /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				92D391D71557906A003D6664 /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		92D391EB1557906B003D6664 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				92D391EC1557906B003D6664 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		92D391F11557906B003D6664 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		92D391F21557906B003D6664 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		92D391F41557906B003D6664 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GradeCalculator/GradeCalculator-Prefix.pch";
+				INFOPLIST_FILE = "GradeCalculator/GradeCalculator-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		92D391F51557906B003D6664 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GradeCalculator/GradeCalculator-Prefix.pch";
+				INFOPLIST_FILE = "GradeCalculator/GradeCalculator-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		92D391F71557906B003D6664 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GradeCalculator.app/GradeCalculator";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GradeCalculator/GradeCalculator-Prefix.pch";
+				INFOPLIST_FILE = "GradeCalculatorTests/GradeCalculatorTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		92D391F81557906B003D6664 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GradeCalculator.app/GradeCalculator";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GradeCalculator/GradeCalculator-Prefix.pch";
+				INFOPLIST_FILE = "GradeCalculatorTests/GradeCalculatorTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		92D391B71557906A003D6664 /* Build configuration list for PBXProject "GradeCalculator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92D391F11557906B003D6664 /* Debug */,
+				92D391F21557906B003D6664 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		92D391F31557906B003D6664 /* Build configuration list for PBXNativeTarget "GradeCalculator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92D391F41557906B003D6664 /* Debug */,
+				92D391F51557906B003D6664 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		92D391F61557906B003D6664 /* Build configuration list for PBXNativeTarget "GradeCalculatorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92D391F71557906B003D6664 /* Debug */,
+				92D391F81557906B003D6664 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		92D392851557989A003D6664 /* GCModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				92D392861557989A003D6664 /* GCModel.xcdatamodel */,
+			);
+			currentVersion = 92D392861557989A003D6664 /* GCModel.xcdatamodel */;
+			path = GCModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 92D391B41557906A003D6664 /* Project object */;
+}
